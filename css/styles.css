@@ -1,0 +1,37 @@
+.navbar-light {
+  background-color: #e3d9cf; }
+
+nav {
+  padding-top: 20px; }
+
+.nav-categories {
+  flex: auto;
+  flex-wrap: nowrap;
+  justify-content: space-around; }
+
+.nav-icons {
+  flex: auto;
+  flex-wrap: nowrap;
+  list-style-type: none;
+  margin: 0;
+  padding: 0; }
+  .nav-icons .a {
+    text-decoration: none;
+    background-color: darkgray; }
+
+.jumbotron {
+  margin: 0px auto;
+  padding: 150px 30px 50px 30px;
+  background: #f3ebe6; }
+
+.row-header {
+  margin: 0px auto;
+  padding: 0px 0px; }
+
+.footer {
+  background-color: #e3d9cf;
+  margin: 0px auto;
+  padding: 20px 0px; }
+
+.extraClass {
+  font-size: 30px; }

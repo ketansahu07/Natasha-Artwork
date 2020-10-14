@@ -10,31 +10,102 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
+    <link href="css/styles.css" rel="stylesheet">
 </head>
 <body>
 
-    <nav class="navbar navbar-dark bg-primary navbar-expand-sm fixed-top">
+    <nav class="navbar-light navbar-expand-sm fixed-top">
         <div class="container">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <a class="navbar-brand mr-auto" href="#">Artwork Galleria</a>
-            <div class="collapse navbar-collapse" id="Navbar">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active"><a class="nav-link" href="#"><span class="fa fa-home fa-lg"></span> Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="./aboutus.html"><span class="fa fa-info fa-lg"></span> About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#"><span class="fa fa-list fa-lg"></span> Menu</a></li>
-                    <li class="nav-item"><a class="nav-link" href="./contactus.html"><span class="fa fa-address-card fa-lg"></span> Contact</a></li>
-                </ul>
-                <span class="navbar-text">
-                    <a id="loginButton" href="#" class="nav-link">
-                    <span class="fa fa-sign-in"></span> Login</a>
-                </span>            
+
+            <div class="row justify-content-center">
+                <div class="col col-sm align-self-center">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+                <div class="col col-sm align-self-center text-center">
+                    <a class="navbar-brand mr-auto" href="#"><img src="img/logo.png" height="40" width="180"></a>
+                </div>
+                <div class="col col-sm align-self-center">
+                    <div class="float-right">
+                        <ul class="navbar-nav d-flex">
+                            <li class="nav-item d-none d-sm-inline"><a class="nav-link" href="#"><span class="fa fa-user fa-lg"></span></a></li>
+                            <li class="nav-item"><a class="nav-link" href="#"><span class="fa fa-search fa-lg"></span></a></li>
+                            <li class="nav-item"><a class="nav-link" href="#"><span class="fa fa-heart fa-lg"></span></a></li>
+                            <li class="nav-item"><a class="nav-link" href="#"><span class="fa fa-shopping-cart fa-lg"></span></a></li>
+                        </ul>   
+                    </div>
+                </div>
             </div>
+
+            <div class="row justify-content-center">
+                <div class="col align-self-center collapse navbar-collapse" id="Navbar">
+                    <ul class="navbar-nav nav-categories">
+                        <li class="nav-item"><a class="nav-link" href="#">Category 1</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Category 2</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Category 3</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Category 4</a></li>
+                    </ul>
+                </div>
+            </div>
+
         </div>
     </nav>
 
+    <header class="jumbotron">
+        <div class="container">
+            <div class="row row-header">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo, ipsam cupiditate totam dolor in adipisci aliquam odio quis saepe sit corporis unde voluptatem vitae accusantium, sapiente rem! Magni sint nihil doloremque quae sit eligendi ullam, id accusamus corrupti aut fuga quos ex quod exercitationem cum odio optio assumenda delectus beatae consequuntur voluptates! Tempora nesciunt unde est, voluptas explicabo officia ipsa nisi amet cupiditate aut quidem incidunt reprehenderit quo voluptate debitis accusantium! Blanditiis id iste, officia ab accusantium laboriosam, excepturi a sunt quisquam repellendus, exercitationem distinctio modi molestias autem doloribus facilis nemo earum? Molestiae, animi repellendus aspernatur necessitatibus at enim architecto.
+            </div>
+        </div>
+    </header>
 
+    <div class="container">
+        <div class="row row-content">
+            
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">             
+                <div class="col-4 offset-1 col-sm-2">
+                    <h5>Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="./aboutus.html">About</a></li>
+                        <li><a href="#">Menu</a></li>
+                        <li><a href="./contactus.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-7 col-sm-5">
+                    <h5>Our Address</h5>
+                    <address>
+		              Address goes here<br>
+		              Kolkata, West Bengal<br>
+		              INDIA<br>
+		              <i class="fa fa-phone fa-lg"></i> : +910000000000<br>
+                      <i class="fa fa-envelope fa-sm"></i> :  
+                      <a href="mailto:example@email.com">exapmle@email.com</a>
+		           </address>
+                </div>
+                <div class="col-12 col-sm-4 align-self-center">
+                    <div class="d-flex justify-content-center">
+                        <a class="nav-link" href="http://facebook.com"><i class="fa fa-facebook extraClass"></i></a>
+                        <a class="nav-link" href="http://facebook.com"><i class="fa fa-instagram extraClass"></i></a>
+                        <a class="nav-link" href="http://facebook.com"><i class="fa fa-pinterest extraClass"></i></a>
+                    </div>
+                </div>
+           </div>
+           <div class="row justify-content-center">             
+                <div class="col-auto">
+                    <p>© Copyright 2020 Artwork Galleria</p>
+                </div>
+           </div>
+        </div>
+    </footer>
     
     <!-- jQuery first, then Popper.js, then Bootstrap JS. -->
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>

@@ -1,0 +1,59 @@
+$lt-gray: #ddd;
+$background-dark: #e3d9cf;
+$background-light: #f3ebe6;
+$background-pale: #e3d9cf;
+
+// Height variables
+$carousel-item-height: 300px;
+
+@mixin zero-margin($pad-up-dn, $pad-left-right) {
+	margin:0px auto;
+	padding: $pad-up-dn $pad-left-right;
+}
+
+.navbar-light {
+    background-color: $background-dark;
+}
+
+nav {
+    padding-top: 20px;
+}
+
+.nav-categories {
+    flex: auto;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+}
+
+.nav-icons {
+    flex: auto;
+    flex-wrap: nowrap;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    .a {
+        text-decoration: none;
+        background-color: darkgray;
+    }
+}
+
+.jumbotron {
+    // @include zero-margin(120px,30px);
+    margin: 0px auto;
+    padding: 150px 30px 50px 30px;
+    background: $background-light;
+}
+
+.row-header{
+    @include zero-margin(0px,0px);
+}
+
+.footer{
+    background-color: $background-pale;
+    @include zero-margin(20px, 0px);
+}
+
+.extraClass{ 
+    font-size:30px; 
+}
