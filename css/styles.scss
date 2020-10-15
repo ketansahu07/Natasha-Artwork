@@ -4,7 +4,7 @@ $background-light: #f3ebe6;
 $background-pale: #e3d9cf;
 
 // Height variables
-$carousel-item-height: 300px;
+$carousel-item-height: 350px;
 
 @mixin zero-margin($pad-up-dn, $pad-left-right) {
 	margin:0px auto;
@@ -47,6 +47,26 @@ nav {
 
 .row-header{
     @include zero-margin(0px,0px);
+}
+
+.row-content {
+    @include zero-margin(50px, 0px);
+    border-bottom: 1px ridge;
+    min-height: 400px;
+}
+
+.carousel {
+    background: $background-light;
+
+    .carousel-item {
+        height: $carousel-item-height;
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            min-height: $carousel-item-height;
+        }
+    }
 }
 
 .footer{
