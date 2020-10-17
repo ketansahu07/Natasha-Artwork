@@ -11,6 +11,10 @@ $carousel-item-height: 350px;
 	padding: $pad-up-dn $pad-left-right;
 }
 
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+
 .navbar-light {
     background-color: $background-dark;
 }
