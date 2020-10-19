@@ -27,6 +27,9 @@ nav {
   padding: 150px 30px 30px 30px;
   background: #f3ebe6; }
 
+.skip-nav {
+  margin: 150px; }
+
 .row-header {
   margin: 0px auto;
   padding: 0px 0px; }
@@ -55,6 +58,10 @@ nav {
 .pagination a.active {
   background-color: #f3ebe6; }
 
+.btn-custom {
+  background-color: #679267;
+  color: floralwhite; }
+
 .footer {
   background-color: #e3d9cf;
   margin: 0px auto;
@@ -62,3 +69,13 @@ nav {
 
 .extraClass {
   font-size: 30px; }
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0; }
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield; }

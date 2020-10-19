@@ -2,6 +2,7 @@ $lt-gray: #ddd;
 $background-dark: #e3d9cf;
 $background-light: #f3ebe6;
 $background-pale: #e3d9cf;
+$button-color: #679267;
 
 // Height variables
 $carousel-item-height: 350px;
@@ -49,6 +50,10 @@ nav {
     background: $background-light;
 }
 
+.skip-nav {
+    margin: 150px;
+}
+
 .row-header{
     @include zero-margin(0px,0px);
 }
@@ -83,6 +88,11 @@ nav {
     background-color: $background-light;
 }
 
+.btn-custom {
+    background-color: $button-color;
+    color: floralwhite;
+}
+
 .footer{
     background-color: $background-pale;
     @include zero-margin(20px, 0px);
@@ -90,4 +100,16 @@ nav {
 
 .extraClass{ 
     font-size:30px; 
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
 }
