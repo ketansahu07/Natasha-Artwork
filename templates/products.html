@@ -9,51 +9,27 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
-    <link href="css/styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../node_modules/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap-social/bootstrap-social.css">
+    <link href="../css/styles.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    
+    <!-- Scripts -->
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script> 
+        $(function(){
+            console.log("test")
+            $("#nav").load("./components/nav.html"); 
+            $("#footer").load("./components/footer.html"); 
+        });
+    </script>
 </head>
 <body>
     
-    <nav class="navbar-light navbar-expand-sm fixed-top">
-        <div class="container">
-
-            <div class="row justify-content-center">
-                <div class="col col-sm align-self-center">
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                </div>
-                <div class="col col-sm align-self-center text-center">
-                    <a class="navbar-brand mr-auto" href="#"><img src="img/logo.png" height="40" width="180"></a>
-                </div>
-                <div class="col col-sm align-self-center">
-                    <div class="float-right">
-                        <ul class="navbar-nav d-flex">
-                            <li class="nav-item d-none d-sm-inline"><a class="nav-link" href="#"><span class="fa fa-user fa-lg"></span></a></li>
-                            <li class="nav-item"><a class="nav-link" href="#"><span class="fa fa-search fa-lg"></span></a></li>
-                            <li class="nav-item"><a class="nav-link" href="#"><span class="fa fa-heart fa-lg"></span></a></li>
-                            <li class="nav-item"><a class="nav-link" href="#"><span class="fa fa-shopping-cart fa-lg"></span></a></li>
-                        </ul>   
-                    </div>
-                </div>
-            </div>
-
-            <div class="row justify-content-center">
-                <div class="col align-self-center collapse navbar-collapse" id="Navbar">
-                    <ul class="navbar-nav nav-categories">
-                        <li class="nav-item"><a class="nav-link" href="#">Category 1</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Category 2</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Category 3</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Category 4</a></li>
-                    </ul>
-                </div>
-            </div>
-
-        </div>
-    </nav>
+    <div id="nav"></div>
 
     <header class="jumbotron">
         <div class="container">
@@ -69,7 +45,7 @@
             <div class="col-12">
                 <div class="d-flex flex-wrap justify-content-around">
                     <div class="card m-2" style="width: 18rem;">
-                        <img class="card-img-top" src="img/product_1.JPG" alt="Card image cap">
+                        <img class="card-img-top" src="../img/product_1.JPG" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title">Product Name</h5>
                             <p class="card-text"><small class="text-muted">Small description</small></p>
@@ -78,7 +54,7 @@
                         </div>
                     </div>
                     <div class="card m-2" style="width: 18rem;">
-                        <img class="card-img-top" src="img/product_1.JPG" alt="Card image cap">
+                        <img class="card-img-top" src="../img/product_1.JPG" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title">Product Name</h5>
                             <p class="card-text"><small class="text-muted">Small description</small></p>
@@ -87,41 +63,7 @@
                         </div>
                     </div>
                     <div class="card m-2" style="width: 18rem;">
-                        <img class="card-img-top" src="img/product_1.JPG" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">Product Name</h5>
-                            <p class="card-text"><small class="text-muted">Small description</small></p>
-                            <p class="card-text">$10</p>
-                            <!-- <a href="#" class="btn">Buy Now</a> -->
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="row row-content">
-            <div class="col-12">
-                <div class="d-flex flex-wrap justify-content-around">
-                    <div class="card m-2" style="width: 18rem;">
-                        <img class="card-img-top" src="img/product_1.JPG" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">Product Name</h5>
-                            <p class="card-text"><small class="text-muted">Small description</small></p>
-                            <p class="card-text">$10</p>
-                            <!-- <a href="#" class="btn">Buy Now</a> -->
-                        </div>
-                    </div>
-                    <div class="card m-2" style="width: 18rem;">
-                        <img class="card-img-top" src="img/product_1.JPG" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">Product Name</h5>
-                            <p class="card-text"><small class="text-muted">Small description</small></p>
-                            <p class="card-text">$10</p>
-                            <!-- <a href="#" class="btn">Buy Now</a> -->
-                        </div>
-                    </div>
-                    <div class="card m-2" style="width: 18rem;">
-                        <img class="card-img-top" src="img/product_1.JPG" alt="Card image cap">
+                        <img class="card-img-top" src="../img/product_1.JPG" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title">Product Name</h5>
                             <p class="card-text"><small class="text-muted">Small description</small></p>
@@ -137,7 +79,7 @@
             <div class="col-12">
                 <div class="d-flex flex-wrap justify-content-around">
                     <div class="card m-2" style="width: 18rem;">
-                        <img class="card-img-top" src="img/product_1.JPG" alt="Card image cap">
+                        <img class="card-img-top" src="../img/product_1.JPG" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title">Product Name</h5>
                             <p class="card-text"><small class="text-muted">Small description</small></p>
@@ -146,7 +88,7 @@
                         </div>
                     </div>
                     <div class="card m-2" style="width: 18rem;">
-                        <img class="card-img-top" src="img/product_1.JPG" alt="Card image cap">
+                        <img class="card-img-top" src="../img/product_1.JPG" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title">Product Name</h5>
                             <p class="card-text"><small class="text-muted">Small description</small></p>
@@ -155,7 +97,7 @@
                         </div>
                     </div>
                     <div class="card m-2" style="width: 18rem;">
-                        <img class="card-img-top" src="img/product_1.JPG" alt="Card image cap">
+                        <img class="card-img-top" src="../img/product_1.JPG" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title">Product Name</h5>
                             <p class="card-text"><small class="text-muted">Small description</small></p>
@@ -171,7 +113,7 @@
             <div class="col-12">
                 <div class="d-flex flex-wrap justify-content-around">
                     <div class="card m-2" style="width: 18rem;">
-                        <img class="card-img-top" src="img/product_1.JPG" alt="Card image cap">
+                        <img class="card-img-top" src="../img/product_1.JPG" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title">Product Name</h5>
                             <p class="card-text"><small class="text-muted">Small description</small></p>
@@ -180,7 +122,7 @@
                         </div>
                     </div>
                     <div class="card m-2" style="width: 18rem;">
-                        <img class="card-img-top" src="img/product_1.JPG" alt="Card image cap">
+                        <img class="card-img-top" src="../img/product_1.JPG" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title">Product Name</h5>
                             <p class="card-text"><small class="text-muted">Small description</small></p>
@@ -189,7 +131,41 @@
                         </div>
                     </div>
                     <div class="card m-2" style="width: 18rem;">
-                        <img class="card-img-top" src="img/product_1.JPG" alt="Card image cap">
+                        <img class="card-img-top" src="../img/product_1.JPG" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Product Name</h5>
+                            <p class="card-text"><small class="text-muted">Small description</small></p>
+                            <p class="card-text">$10</p>
+                            <!-- <a href="#" class="btn">Buy Now</a> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row row-content">
+            <div class="col-12">
+                <div class="d-flex flex-wrap justify-content-around">
+                    <div class="card m-2" style="width: 18rem;">
+                        <img class="card-img-top" src="../img/product_1.JPG" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Product Name</h5>
+                            <p class="card-text"><small class="text-muted">Small description</small></p>
+                            <p class="card-text">$10</p>
+                            <!-- <a href="#" class="btn">Buy Now</a> -->
+                        </div>
+                    </div>
+                    <div class="card m-2" style="width: 18rem;">
+                        <img class="card-img-top" src="../img/product_1.JPG" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Product Name</h5>
+                            <p class="card-text"><small class="text-muted">Small description</small></p>
+                            <p class="card-text">$10</p>
+                            <!-- <a href="#" class="btn">Buy Now</a> -->
+                        </div>
+                    </div>
+                    <div class="card m-2" style="width: 18rem;">
+                        <img class="card-img-top" src="../img/product_1.JPG" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title">Product Name</h5>
                             <p class="card-text"><small class="text-muted">Small description</small></p>
@@ -232,48 +208,9 @@
 
     </div>
 
-    <footer class="footer">
-        <div class="container">
-            <div class="row">             
-                <div class="col-4 offset-1 col-sm-2">
-                    <h5>Links</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="./aboutus.html">About</a></li>
-                        <li><a href="#">Menu</a></li>
-                        <li><a href="./contactus.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="col-7 col-sm-5">
-                    <h5>Our Address</h5>
-                    <address>
-		              Address goes here<br>
-		              Kolkata, West Bengal<br>
-		              INDIA<br>
-		              <i class="fa fa-phone fa-lg"></i> : +910000000000<br>
-                      <i class="fa fa-envelope fa-sm"></i> :  
-                      <a href="mailto:example@email.com">exapmle@email.com</a>
-		           </address>
-                </div>
-                <div class="col-12 col-sm-4 align-self-center">
-                    <div class="d-flex justify-content-center">
-                        <a class="nav-link" href="http://facebook.com"><i class="fa fa-facebook extraClass"></i></a>
-                        <a class="nav-link" href="http://facebook.com"><i class="fa fa-instagram extraClass"></i></a>
-                        <a class="nav-link" href="http://facebook.com"><i class="fa fa-pinterest extraClass"></i></a>
-                    </div>
-                </div>
-           </div>
-           <div class="row justify-content-center">             
-                <div class="col-auto">
-                    <p>© Copyright 2020 Artwork Galleria</p>
-                </div>
-           </div>
-        </div>
-    </footer>
+    <div id="footer"></div>
 
-    <!-- jQuery first, then Popper.js, then Bootstrap JS. -->
-    <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
-    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
-    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- Scripts -->
+
 </body>
 </html>
