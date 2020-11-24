@@ -54,23 +54,23 @@ $(document).ready(function() {
 
     // creating rows of products and appending them to the container
     function createRows(product_set){
-        let item = 0;
-        while(item<product_set.length){
+        let index = 0;
+        while(index<product_set.length){
             let row = $('<div class="row row-content"></div>')
             let col = $('<div class="col-12"></div>')
             let flex_div = $('<div class="d-flex flex-wrap justify-content-around"></div>')
             for(let i=0; i<3; i++){
-                if(item<product_set.length){
-                    let card = $('<div class="card m-2" style="width: 18rem;"></div>');
+                if(index<product_set.length){
+                    let card = $(`<div class="card m-2" data-id="${product_set[index].id}" style="width: 18rem;"></div>`);
                     let card_img = $('<img class="card-img-top" src="../img/product_1.JPG" alt="Card image cap">');
                     let card_body = $('<div class="card-body"></div>');
-                    let title = $('<h5 class="card-title"></h5>').text(product_set[item].title);
-                    let description = $('<p class="card-text"><small class="text-muted"></p>').text(product_set[item].description);
-                    let price = $('<p class="card-text"></p>').text(`₹${product_set[item].price}`);
+                    let title = $('<h5 class="card-title"></h5>').text(product_set[index].title);
+                    let description = $('<p class="card-text"><small class="text-muted"></p>').text(product_set[index].description);
+                    let price = $('<p class="card-text"></p>').text(`₹${product_set[index].price}`);
                     card_body.append(title).append(description).append(price)
                     card.append(card_img).append(card_body)
                     flex_div.append(card)
-                    item = item + 1;
+                    index = index + 1;
                 }
             }
             col.append(flex_div)
@@ -80,6 +80,16 @@ $(document).ready(function() {
         }
     }
 
+    // adding click function to each product card
+    function addClickToCard(){
+        let cards = $(".card")
+        $.each(cards, function(index, card) {
+            $(card).click(function() {
+                let url = "product_detail.html?product=" + encodeURIComponent($(this).data("id"));
+                window.location.href = url;
+            });
+        });
+    }
 
     let products_url = "http://127.0.0.1:8000/api/products/";
     let product_set;
@@ -89,45 +99,14 @@ $(document).ready(function() {
             products_url = `http://127.0.0.1:8000/api/products/?category=${this_category_name}`
         }
         $.get(products_url, {"category": this_category_name}).done(function(data){
-            // console.log(data)
-            prev_page = data.links.previous
-            next_page = data.links.next
-            product_set = data.results
-            createRows(product_set)
+            // console.log(data.results)
+            prev_page = data.links.previous;
+            next_page = data.links.next;
+            product_set = data.results;
+            createRows(product_set);
+            addClickToCard();
         });
     });
-
-    // $.when(get_products).done(function() {
-    //     $("#prev").click(function(event) {
-    //         if(prev_page != null){
-    //             $.get(prev_page, {"category": this_category_name}).done(function(data){
-    //                 // console.log(data)
-    //                 prev_page = data.links.previous
-    //                 next_page = data.links.next
-    //                 product_set = data.results
-    //                 createRows(product_set)
-    //             });
-    //         }
-    //         else{
-    //             event.preventDefault();
-    //         }
-    //     });
-        
-    //     $("#next").click(function(event) {
-    //         if(next_page != null){
-    //             $.get(next_page, {"category": this_category_name}).done(function(data){
-    //                 // console.log(data)
-    //                 prev_page = data.links.previous
-    //                 next_page = data.links.next
-    //                 product_set = data.results
-    //                 createRows(product_set)
-    //             });
-    //         }
-    //         else{
-    //             event.preventDefault();
-    //         }
-    //     });
-    // });
 
     // for infinite scrolling 
 
@@ -140,10 +119,11 @@ $(document).ready(function() {
                 //Add something at the end of the page
                 if(next_page != null){
                     $.get(next_page, {"category": this_category_name}).done(function(data){
-                        prev_page = data.links.previous
-                        next_page = data.links.next
-                        product_set = data.results
-                        createRows(product_set)
+                        prev_page = data.links.previous;
+                        next_page = data.links.next;
+                        product_set = data.results;
+                        createRows(product_set);
+                        addClickToCard();
                     });
                 }
             }
