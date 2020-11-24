@@ -1,2 +1,3 @@
 1. IF THE CATEGORY IS NOT DEFINED IN THE URL THEN GET SET SOME DEFAULT CATEGORY for Products.html page ---> set default to products url 
 2. handel pagination in category product_set in product page.
+3. limit the description text in the product cards.

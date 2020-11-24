@@ -22,16 +22,17 @@ $(document).ready(function() {
         });
     });
 
-    let this_category_name, this_category_url;  // IF THE CATEGORY IS NOT DEFINED IN THE URL THEN GET SET SOME DEFAULT CATEGORY
-    let get_this_cat_url = $.when(get_categories_data).done(function() {
-        // function to get url for the clicked category
+    let this_category_name = '';
+
+    let get_this_cat_name = $.when(get_categories_data).done(function() {
+        // function to get url for the clicked category -----> currently of no use
         function geturl(name) {     
             let obj = categories_data.results.find(item => item.title === name);
             return obj.url;
         }
 
         let queryString = new Array();
-        $(function () {
+        $(function () {         // getting category name from the url (querystring)
             if (queryString.length == 0) {
                 if (window.location.search.split('?').length > 1) {
                     let params = window.location.search.split('?')[1].split('&');
@@ -44,17 +45,23 @@ $(document).ready(function() {
             }
             if (queryString["category"] != null) {
                 this_category_name = queryString["category"];
-                this_category_url = geturl(this_category_name);
-                $("#product_category").text(this_category_name)
+                // this_category_url = geturl(this_category_name);
+                $("#product_category").text(this_category_name);   // adding the category name to the header of the page
             }
         });
     });
 
-    let get_this_cat_data = $.when(get_this_cat_url).done(function() {
-        $.get(this_category_url, function(data) {
-            // console.log(data);
-            let product_set = data.product_set;
-            
+    let products_url = "http://127.0.0.1:8000/api/products/";
+    let products_data, product_set;
+    // creating rows of products and appending them to the container
+    $.when(get_this_cat_name).done(function() {     
+        if(this_category_name != ''){
+            products_url = `http://127.0.0.1:8000/api/products/?category=${this_category_name}`
+        }
+        $.get(products_url, {"category": this_category_name}).done(function(data){
+            // console.log(data)
+            products_data = data
+            product_set = data.results
             let item = 0;
             while(item<product_set.length){
                 let row = $('<div class="row row-content"></div>')
@@ -66,7 +73,7 @@ $(document).ready(function() {
                         let card_img = $('<img class="card-img-top" src="../img/product_1.JPG" alt="Card image cap">');
                         let card_body = $('<div class="card-body"></div>');
                         let title = $('<h5 class="card-title"></h5>').text(product_set[item].title);
-                        let description = $('<p class="card-text"><small class="text-muted"></p>').text(product_set[item].url);
+                        let description = $('<p class="card-text"><small class="text-muted"></p>').text(product_set[item].description);
                         let price = $('<p class="card-text"></p>').text(`₹${product_set[item].price}`);
                         card_body.append(title).append(description).append(price)
                         card.append(card_img).append(card_body)
@@ -80,4 +87,5 @@ $(document).ready(function() {
             }
         });
     });
+
 });
