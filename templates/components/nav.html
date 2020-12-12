@@ -8,15 +8,15 @@
                 </button>
             </div>
             <div class="col col-sm align-self-center text-center">
-                <a class="navbar-brand mr-auto" href="./index.html"><img src="../img/logo.png" height="40" width="180"></a>
+                <a class="navbar-brand mr-auto" href="./index.html"><img style="min-width: 140px;" src="../img/logo.png" height="40" width="180"></a>
             </div>
             <div class="col col-sm align-self-center">
                 <div class="float-right">
-                    <ul class="navbar-nav d-flex">
-                        <li class="nav-item d-none d-sm-inline"><a class="nav-link" href="#"><span class="fa fa-user fa-lg"></span></a></li>
+                    <ul id="nav_icons" class="navbar-nav d-flex justify-content-between mr-2">
                         <li class="nav-item"><a class="nav-link" href="#"><span class="fa fa-search fa-lg"></span></a></li>
-                        <li class="nav-item"><a class="nav-link" href="#"><span class="fa fa-heart fa-lg"></span></a></li>
-                        <li class="nav-item"><a class="nav-link" href="#"><span class="fa fa-shopping-cart fa-lg"></span></a></li>
+                        <li id="nav_login" class="nav-item d-none d-sm-inline"><a class="nav-link" href="#" data-toggle="modal" data-target="#loginModal"><span class="fa fa-sign-in fa-lg"></span><span><strong> Login</strong></span></a></li>
+                        <!-- <li class="nav-item"><a class="nav-link" href="#"><span class="fa fa-shopping-cart fa-lg"></span></a></li> -->
+                        <!-- <li class="nav-item"><a class="nav-link" href="#"><span class="fa fa-heart fa-lg"></span></a></li> -->
                     </ul>   
                 </div>
             </div>
@@ -24,10 +24,18 @@
 
         <div class="row justify-content-center">
             <div class="col align-self-center collapse navbar-collapse" id="Navbar">
+                <ul id="dropdown_login" class="navbar-nav d-flex justify-content-between ml-2">
+                    <li id="nav_login_mobile" class="nav-item d-sm-none"><a class="nav-link" href="#" data-toggle="modal" data-target="#loginModal"><span class="fa fa-sign-in fa-lg"></span><span><strong> Login</strong></span></a></li>
+                </ul>
+                <div class="border-bottom border-dark d-sm-none"></div>
                 <ul id="categories_list" class="navbar-nav nav-categories">
                     <!-- <li class="nav-item"><a class="nav-link" href="#">Category</a></li> -->
                 </ul>
             </div>
+        </div>
+
+        <div class="row d-sm-none">
+            <div class="m-2"></div>
         </div>
 
     </div>

@@ -1,4 +1,16 @@
 $(document).ready(function() {
+
+    $(function(){
+        $("#nav").load("./components/nav.html"); 
+        $("#footer").load("./components/footer.html"); 
+        $("#loadLoginModal").load("./components/login.html"); 
+    });
+
+    $('#loginModal').modal('show');
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    });
+
     // getting the categories for navbar
     let categories_url = "http://127.0.0.1:8000/api/categories";
     let categories_set;
@@ -23,7 +35,7 @@ $(document).ready(function() {
     });
 
 
-    let this_category_name = '';
+    let category_name = '';
     let get_this_cat_name = $.when(get_categories).done(function() {
         // function to get url for the clicked category -----> currently of no use
         function geturl(name) {     
@@ -44,9 +56,9 @@ $(document).ready(function() {
                 }
             }
             if (queryString["category"] != null) {
-                this_category_name = queryString["category"];
-                // this_category_url = geturl(this_category_name);
-                $("#product_category").text(this_category_name);   // adding the category name to the header of the page
+                category_name = queryString["category"];
+                // this_category_url = geturl(category_name);
+                $("#product_category").text(category_name);   // adding the category name to the header of the page
             }
         });
     });
@@ -85,7 +97,7 @@ $(document).ready(function() {
         let cards = $(".card")
         $.each(cards, function(index, card) {
             $(card).click(function() {
-                let url = "product_detail.html?product=" + encodeURIComponent($(this).data("id"));
+                let url = "product_detail.html?category=" + encodeURIComponent(category_name) + "&product=" + encodeURIComponent($(this).data("id"));
                 window.location.href = url;
             });
         });
@@ -95,10 +107,10 @@ $(document).ready(function() {
     let product_set;
     let prev_page = null, next_page = null;
     let get_products = $.when(get_this_cat_name).done(function() {     
-        if(this_category_name != ''){
-            products_url = `http://127.0.0.1:8000/api/products/?category=${this_category_name}`
+        if(category_name != ''){
+            products_url = `http://127.0.0.1:8000/api/products/?category=${category_name}`
         }
-        $.get(products_url, {"category": this_category_name}).done(function(data){
+        $.get(products_url, {"category": category_name}).done(function(data){
             // console.log(data.results)
             prev_page = data.links.previous;
             next_page = data.links.next;
@@ -118,7 +130,7 @@ $(document).ready(function() {
                 scrollLoad = false;
                 //Add something at the end of the page
                 if(next_page != null){
-                    $.get(next_page, {"category": this_category_name}).done(function(data){
+                    $.get(next_page, {"category": category_name}).done(function(data){
                         prev_page = data.links.previous;
                         next_page = data.links.next;
                         product_set = data.results;

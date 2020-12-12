@@ -15,22 +15,13 @@
     <link href="../css/styles.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
 
-    <!-- Scripts -->
-    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
-    <script src="../node_modules/js-cookie/src/js.cookie.js"></script>
-    <script src="../node_modules/popper.js/dist/umd/popper.min.js"></script>
-    <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script> 
-        $(function(){
-            $("#nav").load("./components/nav.html"); 
-            $("#footer").load("./components/footer.html"); 
-        });
-    </script> 
 </head>
 <body>
 
     <div id="nav"></div>
 
+    <div id="loadLoginModal"></div>
+    
     <header class="jumbotron">
         <div class="container">
             <div class="row row-header justify-content-center">
@@ -38,7 +29,7 @@
             </div>
         </div>
     </header>
-
+    
     <div class="container">
 
         <div class="row row-content">
@@ -185,8 +176,14 @@
 
     <div id="footer"></div>
 
-    <!-- scripts -->
+    <!-- Scripts -->
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../node_modules/js-cookie/src/js.cookie.js"></script>
+    <script src="../node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- my scripts -->
     <script src="../js/index.js"></script>
+    <!-- <script src="../js/scripts.js"></script> -->
 
 </body>
 </html>

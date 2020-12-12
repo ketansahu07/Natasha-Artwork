@@ -15,20 +15,13 @@
     <link href="../css/styles.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
     
-    <!-- Scripts -->
-    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
-    <script src="../node_modules/popper.js/dist/umd/popper.min.js"></script>
-    <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script> 
-        $(function(){
-            $("#nav").load("./components/nav.html"); 
-            $("#footer").load("./components/footer.html"); 
-        });
-    </script>
+
 </head>
 <body>
 
     <div id="nav"></div>
+
+    <div id="loadLoginModal"></div>
 
     <header class="skip-nav"></header>
 
@@ -40,14 +33,16 @@
             </div>
             
             <div class="col-12 col-md m-1">
-                <h3>Product Name</h3>
+                <!-- <h3>Product Name</h3>
                 <p class="mb-2 text-muted text-uppercase small">Product Category</p>
                 <h5 class="mt-4"><span class="mr-1"><strong>$10</strong></span></h5>
                 <p class="pt-1 mt-4">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, sapiente illo. Sit
                     error voluptas repellat rerum quidem, soluta enim perferendis voluptates laboriosam. Distinctio,
                     officia quis dolore quos sapiente tempore alias.
-                </p>
+                </p> -->    
+
+                <div id="details"></div>
 
                 <p class="mb-2 mt-4 text-uppercase small">Quantity</p>
                 <div class="mb-2">
@@ -143,6 +138,12 @@
     <div id="footer"></div>
 
     <!-- Scripts -->
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../node_modules/js-cookie/src/js.cookie.js"></script>
+    <script src="../node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- myscript -->
+    <script src="../js/product_detail.js"></script>
 
 </body>
 </html>

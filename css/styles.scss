@@ -101,6 +101,22 @@ nav {
     background-color: $background-light;
 }
 
+.modal-header {
+    background-color: $background-pale;
+    // color: floralwhite;
+    // .close {
+    //     color: floralwhite;
+    // }
+}
+
+// .modal-body {
+//     background-color: $background-light;
+// }
+
+.modal-footer {
+    background-color: $background-light;
+}
+
 .btn-custom {
     background-color: $button-color;
     color: floralwhite;

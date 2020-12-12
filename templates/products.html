@@ -15,22 +15,12 @@
     <link href="../css/styles.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
     
-    <!-- Scripts -->
-    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
-    <script src="../node_modules/js-cookie/src/js.cookie.js"></script>
-    <script src="../node_modules/popper.js/dist/umd/popper.min.js"></script>
-    <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script> 
-        $(function(){
-            $("#nav").load("./components/nav.html"); 
-            $("#footer").load("./components/footer.html"); 
-            // $("#pagination").load("./components/pagination.html");
-        });
-    </script>
 </head>
 <body>
     
     <div id="nav"></div>
+
+    <div id="loadLoginModal"></div>
 
     <header class="jumbotron">
         <div class="container">
@@ -51,6 +41,11 @@
     <div id="footer"></div>
 
     <!-- Scripts -->
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../node_modules/js-cookie/src/js.cookie.js"></script>
+    <script src="../node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- myscripts -->
     <script src="../js/products.js"></script>
 </body>
 </html>

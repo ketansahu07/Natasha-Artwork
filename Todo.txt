@@ -2,3 +2,4 @@
 2. handel pagination in category product_set in product page.
 3. limit the description text in the product cards.
 4. if the product category is not selected then hide the header.
+5. 404 not found for the product that does not exist

@@ -70,6 +70,12 @@ nav {
 .pagination a.active {
   background-color: #f3ebe6; }
 
+.modal-header {
+  background-color: #e3d9cf; }
+
+.modal-footer {
+  background-color: #f3ebe6; }
+
 .btn-custom {
   background-color: #679267;
   color: floralwhite; }
